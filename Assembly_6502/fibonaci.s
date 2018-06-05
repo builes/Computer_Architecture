@@ -500,7 +500,7 @@ STA     $2005
 ; PPU_SCROLL = 0x00;
 LDX     #$00
 LDA     #$00
-sta     $2005
+STA     $2005
 ; PPU_MASK = 8;
 LDX     #$00
 LDA     #$08
