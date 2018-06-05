@@ -305,8 +305,8 @@ POSTSECOND:
 	STA $129 ;high
 	INX
 	CPX #4
-    BNE THIRD
-    JMP FOUR
+    	BNE THIRD
+    	JMP FOUR
 
 ;3 DIGITS
 THIRD:
@@ -347,8 +347,8 @@ L111:
 
 L222:
 	ROL $12D
-    DEY
-    BNE L111
+    	DEY
+    	BNE L111
 	STA $130
 	;FINISH
 	LDA $128
@@ -425,8 +425,8 @@ L3333:
 	LDA #$A
 	STA $160
 	LDA #0
-    LDY #8
-    ASL $140
+    	LDY #8
+    	ASL $140
 
 L17:
     ROL
@@ -466,45 +466,45 @@ L288:
 	;SEGUNDO DIGITO $163
 	
 	;FINISH
-	LDA   $140
-	ADC 	#48
-	STA 	$2007
+	LDA $140
+	ADC #48
+	STA $2007
 	
 	;another
-	LDA   $161
-	ADC 	#48
-	STA 	$2007
+	LDA $161
+	ADC #48
+	STA $2007
 	
 	;another
-	LDA   $143
-	ADC 	#48
-	STA 	$2007
+	LDA $143
+	ADC #48
+	STA $2007
 	
 	;another
-	LDA   $163
-	ADC 	#48
-	STA 	$2007
+	LDA $163
+	ADC #48
+	STA $2007
 	
 	;espacio
-	LDA   #32
-	STA 	$2007
+	LDA #32
+	STA $2007
 	JMP PREFOUR
 
 
 ENDPROCESS:
 
 ; PPU_SCROLL = 0x00;
-ldx     #$00
-lda     #$00
-sta     $2005
+LDX     #$00
+LDA     #$00
+STA     $2005
 ; PPU_SCROLL = 0x00;
-ldx     #$00
-lda     #$00
+LDX     #$00
+LDA     #$00
 sta     $2005
 ; PPU_MASK = 8;
-ldx     #$00
-lda     #$08
-sta     $2001
+LDX     #$00
+LDA     #$08
+STA     $2001
 
 MAIN: JMP MAIN
 .endproc
